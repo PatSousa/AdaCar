@@ -1,0 +1,29 @@
+.YourCart {
+  width: 0;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background: white;
+  height: 100vh;
+  transition: all 0.5s;
+}
+
+.showCart .YourCart {
+  width: 40%;
+  padding: 20px;
+}
+
+.react-datepicker__time-list {
+  padding-left: 0;
+}
+
+.YourCart ul.productsList {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+}
+
+.YourCart ul.productsList li {
+  display: flex;
+  justify-content: space-between;
+}

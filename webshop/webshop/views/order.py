@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 
-from dateutil import parser
+from datetime import datetime
 import json
 
 from pyramid.view import (
@@ -72,7 +72,7 @@ class OrderViews:
                 self.DBsession.flush()
 
         if data.get('delivery_date'):
-            order_delivery = parser.parse(data.get('delivery_date'))
+            order_delivery = datetime.strptime(data.get('delivery_date'), "%d/%m/%Y %H:%M")
             order.delivery_date = order_delivery
             self.DBsession.add(order)
             self.DBsession.flush()

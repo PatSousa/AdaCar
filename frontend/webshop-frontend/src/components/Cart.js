@@ -25,11 +25,11 @@ class Cart extends Component {
         <p>Select your delivery date:</p>
         <DatePicker
           selected={orderDate}
-          onChange={this.props.handleDateChange}
+          onChange={e => this.props.handleDateChange(e)}
           showTimeSelect
-          dateFormat="DD-MM-YYYY HH:mm"
+          dateFormat="DD/MM/YYYY HH:MM"
         />
-        <button onClick={() => this.props.finalizeOrder(orderDate)}>
+        <button onClick={() => this.props.finalizeOrder()}>
           Finalize Order
         </button>
       </div>

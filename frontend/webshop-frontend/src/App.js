@@ -66,7 +66,7 @@ class App extends Component {
         });
     } else {
       fetch(`http://localhost:6543/order/${order_id}`, {
-        method: "POST",
+        method: "post",
         body: JSON.stringify({
           part_type_id: part_id
         })
@@ -83,13 +83,13 @@ class App extends Component {
 
   deleteFromOrder() {}
 
-  finalizeOrder(date) {
+  finalizeOrder() {
     const order_id = this.state.order_id;
-
+    const date = this.state.orderDate;
     fetch(`http://localhost:6543/order/${order_id}`, {
       method: "POST",
       body: JSON.stringify({
-        delivery_date: date
+        delivery_date: date.format("DD/MM/YYYY HH:MM")
       })
     })
       .then(blob => blob.json())
